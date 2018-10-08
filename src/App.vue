@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <app-header></app-header>
+      <router-view></router-view>
+      <app-footer></app-footer>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    AppHeader,
+    AppFooter
   }
 }
 </script>
 
+<style src="./assets/reset.css"></style>
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body{
+  min-height: 90vh;
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/tiny-squares.png);
+}
+</style>
+<style scoped>
+
+.container {
+  width: 98%;
+  margin: 15px auto;
+  background: radial-gradient(hsl(153, 90%, 35%), hsl(153, 47%, 40%), hsl(153, 45%, 25%));
+  border: 1px solid #eee;
+  box-shadow: 0px 3px 5px 1px black;
 }
 </style>
