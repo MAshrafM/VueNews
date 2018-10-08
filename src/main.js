@@ -1,10 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router.js'
+import store from './store.js'
+import AppStory from './components/AppStory.vue'
+import Error from './components/Error.vue'
 
-Vue.config.productionTip = false
+Vue.component('app-story', AppStory)
+Vue.component('error', Error)
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app')

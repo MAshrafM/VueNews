@@ -7,19 +7,19 @@
     
     <ul class="nav-links">
       <li class="nav-link">
-        Home
+        <router-link to="/" class="router-link">Home</router-link>
       </li>
       <li class="nav-link">
-        Technology
+        <router-link to="/search/technology" class="router-link">Technology</router-link>
       </li>
       <li class="nav-link">
-        Sports
+        <router-link to="/search/sports" class="router-link">Sports</router-link>
       </li>
       <li class="nav-link">
-        Politics
+        <router-link to="/search/politics" class="router-link">Politics</router-link>
       </li>
       <li class="nav-link">
-        Entertainment
+        <router-link to="/search/entertainment" class="router-link">Entertainment</router-link>
       </li>
     </ul>
   </nav>
