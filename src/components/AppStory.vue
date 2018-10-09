@@ -1,7 +1,9 @@
 <template>
   <div class="story">
+    <a :href="story.url">
     <img :src="story.urlToImage" :alt="story.title" class="story-img">
-    <a :href="story.url" class="title-text">{{story.title}}</a>
+    <p class="title-text">{{story.title}}</p>
+    </a>
     <p class="news-source">{{story.source.name}}</p>
   </div>
 </template>
@@ -40,6 +42,10 @@ export default{
   padding: 20px;
   color: black;
   padding-bottom: 5px;
+}
+
+a{
+  text-decoration: none;
 }
 
 .news-source {

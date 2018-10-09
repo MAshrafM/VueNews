@@ -8,6 +8,7 @@
     
     <div v-show="loading" class="loading">Loading...</div>
     <error v-if="error"></error>
+    <button v-show="showScrollToTopButton" @click.prevent="scrollToTop" class="top">Back to top</button>
   </div>
 </template>
 
@@ -20,6 +21,29 @@ export default {
   components: {
     AppHeader,
     AppFooter
+  },
+  data(){
+    return {
+      showScrollToTopButton: false
+    }
+  },
+  created(){
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed(){
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    scrollToTop(){
+      document.documentElement.scrollTop = 0
+    },
+    handleScroll(){
+      if(document.body.scrollTop > 40 || document.documentElement.scrollTop > 40){
+        this.showScrollToTopButton = true
+      } else  {
+        this.showScrollToTopButton = false
+      }
+    }
   },
   computed:{
     loading(){
@@ -35,11 +59,19 @@ export default {
 <style src="./assets/reset.css"></style>
 <style>
 body{
-  min-height: 90vh;
   background: url(https://www.toptal.com/designers/subtlepatterns/patterns/tiny-squares.png);
 }
 </style>
 <style scoped>
+
+#app{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+  position: relative;
+}
 
 .container {
   width: 98%;
@@ -47,6 +79,27 @@ body{
   background: radial-gradient(hsl(153, 90%, 35%), hsl(153, 47%, 40%), hsl(153, 45%, 25%));
   border: 1px solid #eee;
   box-shadow: 0px 3px 5px 1px black;
+  position: relative;
+  min-height: 100vh;
+}
+
+.top{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px;
+  background-color: darkslategray;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  text-align: center;
+  outline: 0;
+  border: 0;
+  z-index: 99;
+  cursor: pointer;
 }
 
 .loading {

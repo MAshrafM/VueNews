@@ -1,7 +1,6 @@
 <template>
   <footer class="wrapper">
-    <p class="copy">&copy; 2018 All Rights Reserved MAshraf.</p>
-    <a href="http://github.com/MAshrafM" class="link">Github</a>
+    <p class="copy">&copy; 2018 All Rights Reserved MAshraf | <a href="http://github.com/MAshrafM" class="link">Github</a></p>
   </footer>
 </template>
 

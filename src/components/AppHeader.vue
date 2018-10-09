@@ -10,6 +10,9 @@
         <router-link to="/" class="router-link">Home</router-link>
       </li>
       <li class="nav-link">
+        <router-link to="/search/general" class="router-link">General</router-link>
+      </li>
+      <li class="nav-link">
         <router-link to="/search/technology" class="router-link">Technology</router-link>
       </li>
       <li class="nav-link">
@@ -78,6 +81,7 @@ export default{
   text-decoration: none;
   text-transform: uppercase;
   color: darkslategray;
+  font-weight: 700;
 }
 
 .router-link-exact-active {
