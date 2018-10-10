@@ -11,7 +11,7 @@ A simple project build with Vue-Cli 3 uses News API to pull recent news and topi
 - RSS feed.
 
 ## Showcase
-![View](https://github.com/MAshrafM/VueNews/blob/master/show.jpg)  
+![View](https://github.com/MAshrafM/VueNews/blob/master/show.png)  
   
 ---  
 ## Project setup
